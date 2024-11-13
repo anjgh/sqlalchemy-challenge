@@ -36,6 +36,18 @@ app = Flask(__name__)
 #################################################
 # Flask Routes
 #################################################
+@app.route("/")
+def welcome():
+    """List all available api routes."""
+    return (
+        f"Available Routes:<br/>"
+        f"/api/v1.0/precipitation<br/>"
+        f"/api/v1.0/stations"
+        f"/api/v1.0/tobs"
+        f"/api/v1.0/<start>"
+        f"/api/v1.0/<start>/<end>"   
+    )
+
 @app.route("/api/v1.0/precipitation")
 def precipitation():
      # Starting from the most recent data point in the database. 
